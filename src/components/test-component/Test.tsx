@@ -6,7 +6,7 @@ import { TestProps } from './Test.types'
  */
 const Test: React.FC<TestProps> = () => {
   return (
-    <div>Test</div>
+    <button onClick={() => alert("Test Component has been clicked.")}>Test</button>
   )
 }
 
