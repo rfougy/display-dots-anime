@@ -1,19 +1,38 @@
 {
-  "name": "src",
-  "private": true,
-  "version": "0.0.0",
+  "name": "display-dots-anime",
+  "private": false,
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/display-dots-anime.umd.cjs",
+  "module": "./dist/display-dots-anime.js",
+  "exports": {
+    ".": {
+      "import": {
+        "default": "./dist/display-dots-anime.js",
+        "types": "./dist/index.d.ts"
+      },
+      "require": {
+        "default": "./dist/display-dots-anime.umd.cjs",
+        "types": "./dist/index.d.ts"
+      }
+    }
+  },
+  "types": "./dist/index.d.ts",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@types/node": "^20.8.4",
     "@types/react": "^18.2.28",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
