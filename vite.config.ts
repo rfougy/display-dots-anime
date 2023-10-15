@@ -1,23 +1,28 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
-import { resolve } from "path";
+import { resolve } from "node:path";
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react()],
+import react from "@vitejs/plugin-react";
+import { defineConfig } from "vite";
+import dts from "vite-plugin-dts";
+import tsConfigPaths from "vite-tsconfig-paths";
+import * as packageJson from "./package.json";
+
+export default defineConfig((configEnv) => ({
+  plugins: [
+    react(),
+    tsConfigPaths(),
+    dts({
+      include: ["src/components/"],
+    }),
+  ],
   build: {
     lib: {
-      entry: resolve(__dirname, "./src/components/index.ts"),
+      entry: resolve("src", "components/index.ts"),
       name: "Display Dots Anime",
-      fileName: "display-dots-anime",
+      formats: ["es", "umd"],
+      fileName: (format) => `display-dots-anime.${format}.js`,
     },
     rollupOptions: {
-      external: ["react"],
-      output: {
-        globals: {
-          react: "React",
-        },
-      },
+      external: [...Object.keys(packageJson.peerDependencies)],
     },
   },
-});
+}));

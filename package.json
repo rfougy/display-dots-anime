@@ -6,27 +6,21 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "bundle": "vite build && tsc src/components/index.ts --declaration --emitDeclarationOnly --jsx react --esModuleInterop --outDir dist",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "files": [
     "dist"
   ],
-  "main": "./dist/display-dots-anime.umd.cjs",
-  "module": "./dist/display-dots-anime.js",
   "exports": {
     ".": {
-      "import": {
-        "default": "./dist/display-dots-anime.js",
-        "types": "./dist/index.d.ts"
-      },
-      "require": {
-        "default": "./dist/display-dots-anime.umd.cjs",
-        "types": "./dist/index.d.ts"
-      }
-    }
+      "import": "./dist/display-dots-anime.es.js",
+      "require": "./dist/display-dots-anime.umd.js"
+    },
+    "./dist/style.css": "./dist/style.css"
   },
+  "main": "./dist/display-dots-anime.umd.js",
+  "module": "./dist/display-dots-anime.es.js",
   "types": "./dist/index.d.ts",
   "dependencies": {
     "react": "^18.2.0",
@@ -38,12 +32,19 @@
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
+    "@vitejs/plugin-react": "^4.1.0",
     "@vitejs/plugin-react-swc": "^3.3.2",
     "eslint": "^8.45.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "prettier": "3.0.3",
     "typescript": "^5.0.2",
-    "vite": "^4.4.5"
+    "vite": "^4.4.5",
+    "vite-plugin-dts": "^3.6.0",
+    "vite-tsconfig-paths": "^4.2.1"
+  },
+  "peerDependencies": {
+    "react": "16.8.0 || >=17.x",
+    "react-dom": "16.8.0 || >=17.x"
   }
 }
