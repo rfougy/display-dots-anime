@@ -6,6 +6,9 @@ import dts from "vite-plugin-dts";
 import tsConfigPaths from "vite-tsconfig-paths";
 import * as packageJson from "./package.json";
 
+/**
+ * @see https://articles.wesionary.team/react-component-library-with-vite-and-deploy-in-npm-579c2880d6ff
+ */
 export default defineConfig((configEnv) => ({
   plugins: [
     react(),
