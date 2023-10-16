@@ -23,6 +23,8 @@
   "module": "./dist/display-dots-anime.es.js",
   "types": "./dist/index.d.ts",
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "lodash": "^4.17.21",
     "react": "16.8.0 || >=17.x",
     "react-dom": "16.8.0 || >=17.x",
