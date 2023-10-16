@@ -13,7 +13,7 @@ import shuffleArr from "../../utils/shuffleArr";
 
 import { Box, DisplayDotsBox } from "./DisplayDotsAnime.styled";
 
-const DisplayDotsAnime: React.FC<{
+export const DisplayDotsAnime: React.FC<{
   text: string;
 }> = ({ text }) => {
   const { startAnime } = useDisplayDotsContext();
@@ -54,5 +54,3 @@ const DisplayDotsAnime: React.FC<{
     </Box>
   );
 };
-
-export default DisplayDotsAnime;

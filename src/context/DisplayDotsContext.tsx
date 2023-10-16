@@ -5,7 +5,7 @@ import useInterval from "src/hooks/useInterval";
 export const DisplayDotsContext = createContext<any | null>(null);
 export const useDisplayDotsContext = () => useContext(DisplayDotsContext);
 
-const DisplayDotsProvider: React.FC<{ children: React.ReactNode }> = ({
+export const DisplayDotsProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const [deactivatedCoords, setDeactivatedCoords] = useState<
@@ -53,5 +53,3 @@ const DisplayDotsProvider: React.FC<{ children: React.ReactNode }> = ({
     </DisplayDotsContext.Provider>
   );
 };
-
-export default DisplayDotsProvider;
