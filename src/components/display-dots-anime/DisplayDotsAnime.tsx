@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 import { useEffect, useMemo } from "react";
 import { useDisplayDotsContext } from "../../context/DisplayDotsContext";
 
