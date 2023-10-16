@@ -1,5 +1,5 @@
 import groupBy from "lodash/groupBy";
-import "../../ext/string.extensions";
+import "../ext/string.extensions";
 
 import displayDotsDict from "../constants/displayDotsDict";
 import createStructuredClone from "../utils/createStructuredClone";

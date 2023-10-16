@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const Dot = styled.div`
-  background: #ffffff;
+  background: #000000;
   border-radius: 50%;
   display: inline-block;
   height: 0.425rem;
