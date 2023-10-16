@@ -217,7 +217,7 @@ export function groupCoordsByChar(string: string) {
     });
   });
 
-  for (let key in groupedCoordsHashtable) {
+  for (const key in groupedCoordsHashtable) {
     groupedCoordsHashtable[key].allCoordsByRow = groupBy(
       groupedCoordsHashtable[key].allCoords,
       (coord) => coord[0],
