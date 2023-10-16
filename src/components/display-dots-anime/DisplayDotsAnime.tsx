@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo } from "react";
 import { useDisplayDotsContext } from "../../context/DisplayDotsContext";
 
 import DotWord from "./word/DotWord";
@@ -13,17 +13,10 @@ import shuffleArr from "../../utils/shuffleArr";
 
 import { Box, DisplayDotsBox } from "./DisplayDotsAnime.styled";
 
-// import IconButton from "../../shared/icon-button/IconButton";
-// import restartIcon from "../../../public/assets/icons/restart-icon.svg";
-
 const DisplayDotsAnime: React.FC<{
-  text?: string;
-  includeRestartButton?: boolean;
-}> = ({ text = "DISPLAY DOTS!", includeRestartButton }) => {
-  const [restartButtonRotating, setRestartButtonRotating] =
-    useState<boolean>(false);
-
-  const { restartAnime, startAnime, animeEnded } = useDisplayDotsContext();
+  text: string;
+}> = ({ text }) => {
+  const { startAnime } = useDisplayDotsContext();
 
   const upperCaseText: string = text.toUpperCase();
 
@@ -49,12 +42,7 @@ const DisplayDotsAnime: React.FC<{
     startAnime(shuffleArr(allInactiveCoords));
   }
 
-  function restart() {
-    restartAnime(shuffleArr(allInactiveCoords));
-  }
-
   useEffect((): void => start(), []);
-  useEffect(() => setRestartButtonRotating(animeEnded), [animeEnded]);
 
   return (
     <Box>
@@ -63,16 +51,6 @@ const DisplayDotsAnime: React.FC<{
           <DotWord key={index} wordOrSpace={wordOrSpace} />
         ))}
       </DisplayDotsBox>
-      {/* {includeRestartButton && (
-        <IconButton
-          src={restartIcon}
-          alt="restart icon"
-          ariaLabel="restart animation"
-          isDisabled={!animeEnded}
-          rotate={restartButtonRotating.toString() as "true" | "false"}
-          onClick={() => restart()}
-        />
-      )} */}
     </Box>
   );
 };
