@@ -1,3 +1,4 @@
+// use client
 import DotCell from "../cell/DotCell";
 
 import { Box } from "./DotRow.styled";

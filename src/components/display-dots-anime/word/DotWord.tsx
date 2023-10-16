@@ -1,3 +1,4 @@
+// use client
 import DotChar from "../char/DotChar";
 
 import { Box } from "./DotWord.styled";

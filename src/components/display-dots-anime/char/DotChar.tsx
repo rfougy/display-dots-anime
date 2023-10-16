@@ -1,3 +1,4 @@
+// use client
 import DotRow from "../row/DotRow";
 
 import { Box } from "./DotChar.styled";
