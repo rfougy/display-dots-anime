@@ -2,11 +2,10 @@ import { createContext, useState, useContext } from "react";
 
 import useInterval from "src/hooks/useInterval";
 
-export const DisplayDotsCoordsContext = createContext<any | null>(null);
-export const useDisplayDotsCoordsContext = () =>
-  useContext(DisplayDotsCoordsContext);
+export const DisplayDotsContext = createContext<any | null>(null);
+export const useDisplayDotsContext = () => useContext(DisplayDotsContext);
 
-const DisplayDotsCoordsProvider: React.FC<{ children: React.ReactNode }> = ({
+const DisplayDotsProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const [deactivatedCoords, setDeactivatedCoords] = useState<
@@ -42,7 +41,7 @@ const DisplayDotsCoordsProvider: React.FC<{ children: React.ReactNode }> = ({
   useInterval(animeEnded, displayDotsAnimeCallback, 12.5);
 
   return (
-    <DisplayDotsCoordsContext.Provider
+    <DisplayDotsContext.Provider
       value={{
         deactivatedCoords,
         animeEnded,
@@ -51,8 +50,8 @@ const DisplayDotsCoordsProvider: React.FC<{ children: React.ReactNode }> = ({
       }}
     >
       {children}
-    </DisplayDotsCoordsContext.Provider>
+    </DisplayDotsContext.Provider>
   );
 };
 
-export default DisplayDotsCoordsProvider;
+export default DisplayDotsProvider;
