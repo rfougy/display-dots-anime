@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo } from "react";
-import { useDisplayDotsContext } from "../../context/DisplayDotsContext";
+import { useDisplayDots } from "src/hooks/useDisplayDots";
 
 import DotWord from "./word/DotWord";
 
@@ -18,7 +18,7 @@ import { Box, DisplayDotsBox } from "./DisplayDotsAnime.styled";
 export const DisplayDotsAnime: React.FC<{
   text: string;
 }> = ({ text }) => {
-  const { startAnime } = useDisplayDotsContext();
+  const { startAnime } = useDisplayDots();
 
   const upperCaseText: string = text.toUpperCase();
 
