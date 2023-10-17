@@ -2,14 +2,14 @@
 
 import { useEffect, useState } from "react";
 
-import { useDisplayDotsContext } from "../../../context/DisplayDotsContext";
+import { useDisplayDots } from "src/hooks/useDisplayDots";
 
 import { Dot } from "./DotCell.styled";
 
 const DotCell: React.FC<{ coord: number[] }> = ({ coord }) => {
   const [isDeactivated, setIsDeactivated] = useState<boolean>(false);
 
-  const { deactivatedCoords: dCoords, animeEnded } = useDisplayDotsContext();
+  const { deactivatedCoords: dCoords, animeEnded } = useDisplayDots();
 
   useEffect(() => {
     if (!animeEnded) setIsDeactivated(false);

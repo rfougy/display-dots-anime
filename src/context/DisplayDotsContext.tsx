@@ -40,17 +40,17 @@ export const DisplayDotsProvider: React.FC<{ children: React.ReactNode }> = ({
     setAnimeEnded(false);
   }
 
+  const displayDotsVals = {
+    deactivatedCoords,
+    animeEnded,
+    startAnime,
+    restartAnime,
+  };
+
   useInterval(animeEnded, displayDotsAnimeCallback, 12.5);
 
   return (
-    <DisplayDotsContext.Provider
-      value={{
-        deactivatedCoords,
-        animeEnded,
-        startAnime,
-        restartAnime,
-      }}
-    >
+    <DisplayDotsContext.Provider value={displayDotsVals}>
       {children}
     </DisplayDotsContext.Provider>
   );
