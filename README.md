@@ -28,20 +28,20 @@ Via npm:
 $ npm install display-dots-anime
 ```
 
-### Example Usage (via ES6 modules)
+### Example Usage (via Next.JS v13 with ES6 Modules)
 
 ```javascript
-import React from "react";
-import { useDisplayDots, DisplayDotsAnime } from "display-dots-anime";
+"use client";
 
+import { DisplayDotsProvider, DisplayDotsAnime } from "display-dots-anime";
 
-const HomePage = () => (
-  <DisplayDotsProvider>
-    <DisplayDotsAnime text="DISPLAY DOTS" />
-  </DisplayDotsProvider>
-);
-
-export default HomePage;
+export default function Home() {
+  return (
+    <DisplayDotsProvider>
+      <DisplayDotsAnime text="Welcome to My Website" />
+    </DisplayDotsProvider>
+  );
+}
 
 ```
 
