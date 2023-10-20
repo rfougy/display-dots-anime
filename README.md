@@ -1,8 +1,6 @@
-<h1 align="center">
-  Display Dots Anime
-</h1>
+<img alt="Display Dots Anime Logo" src="https://github.com/rfougy/display-dots-anime/assets/77861258/8d78c0cd-b591-4bda-bbb6-b0e129d33af1">
 
-<h4 align="center">A React Animation Library for the Display Dots Interface</h4>
+<h4 align="center">Display DotsAnime: A React Animation Library for the Display Dots Interface</h4>
 
 <table align="center">
   <tbody>
@@ -37,13 +35,13 @@ import React from "react";
 import { useDisplayDots, DisplayDotsAnime } from "display-dots-anime";
 
 
-const Home = () => (
+const HomePage = () => (
   <DisplayDotsProvider>
     <DisplayDotsAnime text="DISPLAY DOTS" />
   </DisplayDotsProvider>
 );
 
-export default Home;
+export default HomePage;
 
 ```
 
