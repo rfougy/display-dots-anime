@@ -18,6 +18,10 @@
   </tbody>
 </table>
 
+## Attention
+
+This library is currently in beta and is **NOT** ready for a production setting. Please refer to the [release notes](https://github.com/rfougy/display-dots-anime/releases) for updates.
+
 ## Getting started
 
 ### Installation
